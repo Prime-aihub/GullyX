@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GullyX Payment</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <section class="wallet-section">
+
+    <div class="wallet-card">
+
+      <h2>Join Match</h2>
+
+      <p>Cricket Night Match</p>
+
+      <h1>₹10</h1>
+
+      <button id="payBtn">
+
+        Proceed Payment
+
+      </button>
+
+    </div>
+
+  </section>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <script>
+
+    const payBtn = document.getElementById('payBtn');
+
+    payBtn.onclick = function () {
+
+      const options = {
+
+        key: "YOUR_RAZORPAY_KEY",
+
+        amount: 1000,
+
+        currency: "INR",
+
+        name: "GullyX",
+
+        description: "Match Join Payment",
+
+        handler: function (response) {
+
+          alert("Payment Successful");
+
+          window.location.href = "games.html";
+
+        }
+
+      };
+
+      const rzp = new Razorpay(options);
+
+      rzp.open();
+
+    };
+
+  </script>
+
+</body>
+
+</html>
