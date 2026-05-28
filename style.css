@@ -789,3 +789,90 @@ footer p {
 }
 
 }
+
+.token-plans {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+
+  gap: 25px;
+
+  margin-top: 40px;
+
+}
+
+.token-card-plan {
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  position: relative;
+
+  transition: 0.3s ease;
+
+}
+
+.token-card-plan:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 0 30px rgba(0,200,255,0.25);
+
+}
+
+.token-card-plan h2 {
+
+  margin: 15px 0;
+
+  font-size: 34px;
+
+}
+
+.token-card-plan p {
+
+  margin-bottom: 20px;
+
+  color: #bcbcbc;
+
+}
+
+.best-pack {
+
+  border: 1px solid #72ff3b;
+
+}
+
+.premium-pack {
+
+  border: 1px solid #00c8ff;
+
+}
+
+.best-badge {
+
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  background: linear-gradient(45deg,#00c8ff,#72ff3b);
+
+  color: black;
+
+  padding: 7px 12px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+}
