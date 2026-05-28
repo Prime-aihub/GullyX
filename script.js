@@ -1,9 +1,3 @@
-alert("Script Working");
-function getLocation() 
-{ 
-  alert("Location Button Working"); 
-}
-
 // THEME TOGGLE
 
 const themeToggle = document.getElementById('themeToggle');
