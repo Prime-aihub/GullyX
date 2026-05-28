@@ -1,23 +1,21 @@
-// THEME TOGGLE
+window.onload = function () {
 
-const themeToggle
- = document.getElementById('themeToggle');
+  const themeToggle = document.getElementById('themeToggle');
 
-themeToggle.addEventListener('click', () => {
+  themeToggle.onclick = function () {
 
-  document.body.classList.toggle('light');
+    document.body.classList.toggle('light');
 
-  if (document.body.classList.contains('light')) {
+    if (document.body.classList.contains('light')) {
 
-    themeToggle.innerHTML = '🌙';
+      themeToggle.innerHTML = '🌙';
 
-  } else {
+    } else {
 
-    themeToggle.innerHTML = '⚽';
+      themeToggle.innerHTML = '⚽';
 
-  }
+    }
 
-});
+  };
 
-console.log('✅ GullyX Loaded Successfully');
-```
+};
