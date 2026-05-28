@@ -1,20 +1,62 @@
-// THEME TOGGLE
+// WAIT UNTIL PAGE LOADS
 
-const themeToggle = document.getElementById('themeToggle');
+document.addEventListener('DOMContentLoaded', () => {
 
-themeToggle.addEventListener('click', () => {
+  console.log('✅ GullyX Loaded Successfully');
 
-  document.body.classList.toggle('light');
+  // THEME TOGGLE
 
-  if (document.body.classList.contains('light')) {
+  const themeToggle = document.getElementById('themeToggle');
 
-    themeToggle.innerHTML = '🌙';
+  if (themeToggle) {
 
-  } else {
+    themeToggle.addEventListener('click', () => {
 
-    themeToggle.innerHTML = '⚽';
+      document.body.classList.toggle('light');
+
+      if (document.body.classList.contains('light')) {
+
+        themeToggle.innerHTML = '🌙';
+
+      } else {
+
+        themeToggle.innerHTML = '⚽';
+
+      }
+
+    });
 
   }
+
+  // SMOOTH SCROLL NAVIGATION
+
+  const navLinks = document.querySelectorAll('nav a');
+
+  navLinks.forEach(link => {
+
+    link.addEventListener('click', function (e) {
+
+      const targetId = this.getAttribute('href');
+
+      if (targetId.startsWith('#')) {
+
+        e.preventDefault();
+
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+
+          targetSection.scrollIntoView({
+            behavior: 'smooth'
+          });
+
+        }
+
+      }
+
+    });
+
+  });
 
 });
 
@@ -42,14 +84,14 @@ function showPosition(position) {
 
   const lon = position.coords.longitude;
 
+  console.log("User Location:", lat, lon);
+
   // OPEN GOOGLE MAPS
 
   window.open(
     `https://www.google.com/maps?q=${lat},${lon}`,
     "_blank"
   );
-
-  console.log("User Location:", lat, lon);
 
 }
 
@@ -87,13 +129,15 @@ function showError(error) {
 
 }
 
-// OPTIONAL FUTURE READY FUNCTIONS
+// GAME JOIN FUNCTION
 
-function joinGame(gameName, amount) {
+function joinGame(amount = 10) {
 
   window.location.href = `payment.html?amount=${amount}`;
 
 }
+
+// OPEN VENUE PAGE
 
 function openVenue() {
 
@@ -101,13 +145,27 @@ function openVenue() {
 
 }
 
+// OPEN WALLET PAGE
+
 function openWallet() {
 
   window.location.href = 'wallet.html';
 
 }
 
-// WEBSITE LOADED
+// START PLAYING BUTTON
 
-console.log('✅ GullyX Loaded Successfully');
+function startPlaying() {
+
+  const gamesSection = document.getElementById('games');
+
+  if (gamesSection) {
+
+    gamesSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+
+  }
+
+}
 ```
