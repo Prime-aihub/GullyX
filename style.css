@@ -876,3 +876,107 @@ footer p {
   font-weight: 700;
 
 }
+
+/* =========================
+   LIGHT MODE THEME
+========================= */
+
+body.light {
+
+  background: #f5f7fb;
+  color: #111111;
+
+}
+
+/* NAVBAR */
+
+body.light .navbar {
+
+  background: rgba(255,255,255,0.92);
+
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  backdrop-filter: blur(12px);
+
+}
+
+/* HERO */
+
+body.light .hero {
+
+  background: transparent;
+
+}
+
+/* TEXT */
+
+body.light h1,
+body.light h2,
+body.light h3,
+body.light p,
+body.light a {
+
+  color: #111111;
+
+}
+
+/* CARDS */
+
+body.light .game-card,
+body.light .feature-card,
+body.light .venue-card,
+body.light .trainer-card,
+body.light .wallet-card,
+body.light .price-card,
+body.light .live-box {
+
+  background: #ffffff;
+
+  border: 1px solid rgba(0,0,0,0.08);
+
+  color: #111111;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+}
+
+/* BUTTONS */
+
+body.light button {
+
+  color: #111111;
+
+}
+
+/* SECTION BACKGROUND */
+
+body.light .features,
+body.light .games-grid,
+body.light .venue-grid,
+body.light .trainer-grid {
+
+  background: transparent;
+
+}
+
+/* INPUTS */
+
+body.light input,
+body.light textarea {
+
+  background: white;
+  color: black;
+
+}
+
+/* FOOTER */
+
+body.light footer {
+
+  background: #ffffff;
+
+  border-top: 1px solid rgba(0,0,0,0.08);
+
+}
+
+
