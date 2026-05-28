@@ -22,7 +22,7 @@
 
       <p>Cricket Night Match</p>
 
-      <h1>₹10</h1>
+     <h1 id="paymentAmount">₹10</h1>
 
       <button id="payBtn">
 
@@ -38,39 +38,45 @@
 
   <script>
 
-    const payBtn = document.getElementById('payBtn');
+const urlParams = new URLSearchParams(window.location.search);
 
-    payBtn.onclick = function () {
+const amount = urlParams.get('amount') || 10;
 
-      const options = {
+document.getElementById('paymentAmount').innerText = `₹${amount}`;
 
-        key: "YOUR_RAZORPAY_KEY",
+const payBtn = document.getElementById('payBtn');
 
-        amount: 1000,
+payBtn.onclick = function () {
 
-        currency: "INR",
+  const options = {
 
-        name: "GullyX",
+    key: "YOUR_RAZORPAY_KEY",
 
-        description: "Match Join Payment",
+    amount: amount * 100,
 
-        handler: function (response) {
+    currency: "INR",
 
-          alert("Payment Successful");
+    name: "GullyX",
 
-          window.location.href = "games.html";
+    description: "Match Join Payment",
 
-        }
+    handler: function (response) {
 
-      };
+      alert("Payment Successful");
 
-      const rzp = new Razorpay(options);
+      window.location.href = "games.html";
 
-      rzp.open();
+    }
 
-    };
+  };
 
-  </script>
+  const rzp = new Razorpay(options);
+
+  rzp.open();
+
+};
+
+</script>
 
 </body>
 
