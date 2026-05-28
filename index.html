@@ -42,8 +42,8 @@
 
     <div class="nav-actions">
 
-      <button class="location-btn"
-onclick="getLocation()">
+  
+<button class="location-btn">
 
   📍 Near You
 
@@ -521,12 +521,14 @@ loading="lazy">
       Find players, venues, tournaments and local communities instantly.
     </p>
 
+
 <button class="primary-btn"
-onclick="startPlaying()">
+onclick="document.getElementById('games').scrollIntoView({ behavior: 'smooth' })">
 
   Start Playing
 
 </button>
+
 
   </section>
 
