@@ -554,7 +554,7 @@ button {
 
   margin-top: 18px;
 
-  padding: 14px;
+  padding: 15px;
 
   border-radius: 14px;
 
@@ -562,7 +562,23 @@ button {
 
   font-weight: 700;
 
-  color: black;
+  font-size: 16px;
+
+  color: #000000;
+
+  text-align: center;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border: none;
+
+  cursor: pointer;
+
+  min-height: 52px;
 
 }
 
