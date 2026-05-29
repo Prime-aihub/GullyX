@@ -12,54 +12,6 @@
 
 </head>
 
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBiI6QHKA1Cl1KgdywBEgTKykpk0Kxltjs",
-  authDomain: "gullyx-platform.firebaseapp.com",
-  projectId: "gullyx-platform",
-  storageBucket: "gullyx-platform.firebasestorage.app",
-  messagingSenderId: "257258664695",
-  appId: "1:257258664695:web:c9f61f15ea1ba25b8e59f2",
-  measurementId: "G-K27PFWGJ6K"
-};
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-const provider = new GoogleAuthProvider();
-
-window.googleLogin = async function () {
-
-  try {
-
-    const result = await signInWithPopup(auth, provider);
-
-    alert("Welcome " + result.user.displayName);
-
-    window.location.href = "index.html";
-
-  }
-
-  catch(error) {
-
-    alert(error.message);
-
-  }
-
-};
-
-</script>
- 
 <body>
 
   <section class="wallet-section">
@@ -69,18 +21,29 @@ window.googleLogin = async function () {
       <h2>Login To GullyX</h2>
 
       <p>
-        Continue with your mobile number
+        Continue with Google or your mobile number
       </p>
 
       <br>
 
-<button onclick="googleLogin()" style="width:100%;margin-bottom:15px;">
+      <button
+        onclick="googleLogin()"
+        style="
+        width:100%;
+        padding:15px;
+        margin-bottom:15px;
+        border:none;
+        border-radius:14px;
+        cursor:pointer;
+      ">
 
-  🔵 Continue with Google
+        🔵 Continue with Google
 
-</button>
+      </button>
 
-      <input type="text" placeholder="Enter Mobile Number"
+      <input
+        type="text"
+        placeholder="Enter Mobile Number"
         style="
         width:100%;
         padding:16px;
@@ -105,6 +68,65 @@ window.googleLogin = async function () {
 
   </section>
 
+  <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyBiI6QHKA1Cl1KgdywBEgTKykpk0Kxltjs",
+
+      authDomain: "gullyx-platform.firebaseapp.com",
+
+      projectId: "gullyx-platform",
+
+      storageBucket: "gullyx-platform.firebasestorage.app",
+
+      messagingSenderId: "257258664695",
+
+      appId: "1:257258664695:web:c9f61f15ea1ba25b8e59f2",
+
+      measurementId: "G-K27PFWGJ6K"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+
+    const provider = new GoogleAuthProvider();
+
+    window.googleLogin = async function () {
+
+      try {
+
+        const result = await signInWithPopup(auth, provider);
+
+        alert("Welcome " + result.user.displayName);
+
+        window.location.href = "index.html";
+
+      }
+
+      catch (error) {
+
+        alert(error.message);
+
+        console.error(error);
+
+      }
+
+    };
+
+  </script>
+
 </body>
 
 </html>
+
