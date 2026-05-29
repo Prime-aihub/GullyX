@@ -20,7 +20,7 @@
 
       <h2>Join Match</h2>
 
-      <p>Cricket Night Match</p>
+      <p id="matchName">Cricket Night Match</p>
 
      <h1 id="paymentAmount">₹10</h1>
 
@@ -42,7 +42,11 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const amount = urlParams.get('amount') || 10;
 
+const match = urlParams.get('match') || 'Cricket Night Match';
+
 document.getElementById('paymentAmount').innerText = `₹${amount}`;
+
+document.getElementById('matchName').innerText = match;
 
 const payBtn = document.getElementById('payBtn');
 
