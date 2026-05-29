@@ -4,7 +4,6 @@ document.getElementById("themeToggle").onclick = function () {
 
 };
 
-```javascript id="x8m2v4"
 // NEAR YOU BUTTON
 
 const locationBtn = document.querySelector(".location-btn");
