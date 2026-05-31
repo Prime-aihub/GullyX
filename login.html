@@ -113,9 +113,16 @@ border-radius:10px;">
 
         const result = await signInWithPopup(auth, provider);
 
-        alert("Welcome " + result.user.displayName);
+       
+alert(
+  "Logged In\n\n" +
+  result.user.displayName + "\n" +
+  result.user.email
+);
 
-        window.location.href = "index.html";
+// TEMPORARY TEST
+// window.location.href = "index.html";
+
 
       }
 
