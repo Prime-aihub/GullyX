@@ -22,7 +22,7 @@
 
     <div class="wallet-balance">
 
-      <h1>48 Tokens</h1>
+      <h1 id="walletBalance">0 Tokens</h1>
 
       <p>Available Balance</p>
 
@@ -129,6 +129,21 @@
   </div>
 
 </section>
+
+<script>
+
+const user =
+JSON.parse(localStorage.getItem("gullyxUser"));
+
+if(user){
+
+document.getElementById("walletBalance")
+.innerHTML = user.tokens + " Tokens";
+
+}
+
+</script>
+
 
 </body>
 
