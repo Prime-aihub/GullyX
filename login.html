@@ -114,14 +114,19 @@ border-radius:10px;">
         const result = await signInWithPopup(auth, provider);
 
        
-alert(
-  "Logged In\n\n" +
-  result.user.displayName + "\n" +
-  result.user.email
+
+localStorage.setItem(
+  "gullyxUser",
+  JSON.stringify({
+    name: result.user.displayName,
+    email: result.user.email,
+    tokens: 2
+  })
 );
 
-// TEMPORARY TEST
-// window.location.href = "index.html";
+window.location.href = "index.html";
+
+
 
 
       }
