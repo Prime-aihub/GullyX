@@ -42,3 +42,37 @@ locationBtn.onclick = function () {
   }
 
 };
+
+// LOGIN STATUS
+
+const user = JSON.parse(
+  localStorage.getItem("gullyxUser")
+);
+
+if (user) {
+
+  const loginBtn =
+    document.getElementById("loginBtn");
+
+  const tokenBadge =
+    document.getElementById("tokenBadge");
+
+  if (loginBtn) {
+
+    loginBtn.innerHTML =
+      "👤 " + user.name;
+
+  }
+
+  if (tokenBadge) {
+
+    tokenBadge.style.display = "block";
+
+    tokenBadge.innerHTML =
+      "🎟️ " + user.tokens;
+
+  }
+
+}
+
+
