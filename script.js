@@ -75,4 +75,15 @@ if (user) {
 
 }
 
+const walletBalance =
+  document.getElementById("walletBalance");
+
+if (walletBalance && user) {
+
+  walletBalance.innerHTML =
+    user.tokens + " Tokens";
+
+}
+
+
 
